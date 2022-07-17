@@ -1,0 +1,58 @@
+<div [ngStyle]="{'background': 'linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url(' + movie?.backdrop_path + ') no-repeat 0 0 / cover'}" class="flex-center">
+<!-- <div [ngStyle]="{'background': 'linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url(' + 'https://upload.wikimedia.org/wikipedia/commons/b/be/Burger_King_Angus_Bacon_%26_Cheese_Steak_Burger.jpg' + ') no-repeat 0 0 / cover'}" class="flex-center"> For Test -->
+ <div class="row">
+    <div class="col-xs-12">
+        <!-- <img src='https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG' alt="{{movie?.title}}" class="img-responsive" style="max-height: 150px;"> For Test -->
+        <img [src]="movie?.poster_path" alt="{{movie?.title}}" class="img-responsive" style="max-height: 300px;">   
+    </div>
+ </div>
+ <div class="row">
+    <div class="col-xs-12">
+        <h1>{{ movie?.title }}</h1>
+    </div>
+ </div>
+ <div class="row">
+    <div class="col-xs-12">
+        <div class="form-group">
+            <h4 for="description">overview</h4>
+            <p type="text" id="description">{{ movie?.overview }}</p>
+        </div>
+    </div>
+ </div>
+
+ <div class="row mt-1">
+    <div class="col-sm">
+        <pre>Adult: <b>{{movie?.adult}}</b></pre>
+    </div>
+    <div class="col-sm">
+        <pre>Original Language: <b>{{movie?.original_language}}</b></pre>
+    </div>
+    <div class="col-sm">
+        <pre>Original Title: <b>{{movie?.original_title | shorten:10}}</b></pre>
+    </div>
+ </div>
+ <div class="row mt-1">
+    <div class="col-sm">
+        <pre>Video: <b>{{movie?.video}}</b></pre>
+    </div>
+    <div class="col-sm">
+        <pre>Release Date: <b>{{movie?.release_date}}</b></pre>
+    </div>
+    <div class="col-sm">
+        <pre>Popularity: <b>{{movie?.popularity}}</b></pre>
+    </div>
+ </div>
+ <div class="row mt-1">
+    <div class="col-sm">
+        <pre>Vote Count: <b>{{movie?.vote_count}}</b></pre>
+    </div>
+    <div class="col-sm">
+        <span>Vote Average: <b>{{movie?.vote_average}}</b></span>
+        <br>
+        <ngb-rating [(rate)]="currentRate" [readonly]="true" [max]="5"
+        style="font-size: 1.5rem;
+        color: #ffd700;"></ngb-rating>
+    </div>
+    <div class="col-sm">
+ </div>
+</div>

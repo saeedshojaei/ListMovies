@@ -1,0 +1,9 @@
+<div class="row">
+    <div class="col-xs-12" *ngIf= "filterMovies.length > 0; else notResult">
+        <app-movie-item *ngFor= "let movie of filterMovies; let i = index"
+        [movie]="movie" [index]="movie.id"></app-movie-item>
+    </div>
+    <ng-template #notResult>
+        <h6 class="text-danger m-3">there is nothing movie whit {{ searchName }} !</h6>
+      </ng-template>
+</div>

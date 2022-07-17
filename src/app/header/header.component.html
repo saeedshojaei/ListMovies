@@ -1,0 +1,6 @@
+<nav class="navbar navbar-light bg-light justify-content-between p-2">
+    <a [routerLink]="'.'" class="navbar-brand">Movie Viewer</a>
+    <div class="nav navbar-nav navbar-right">
+        <input #myInput type="search" results class="form-control" placeholder="Search by movie title" (input)="filterItem(myInput.value)">
+    </div>
+  </nav>
